@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block body_content %}
+<div class='form'>
+	<form method='POST' action=''>
+	{{ form.hidden_tag() }}
+        {{ form.orderstatus.label }}
+        {{ form.orderstatus }}
+	{% if form.orderstatus.errors %}
+		{% for error in form.orderstatus.errors %}
+		{{ error }}
+		{% endfor %}
+        {% endif %}
+        <br>
+        {{ form.submit }}
+        </form>
+</div>
+
+{% endblock %}

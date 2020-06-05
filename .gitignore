@@ -1,0 +1,6 @@
+/pycache/
+*.pyc
+/project-venv/
+/documnents/
+/venv/
+

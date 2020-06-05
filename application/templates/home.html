@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block body_content %}
+<p>Papa Jon's Pizza</p>
+{% for order in orders %}
+	<div>
+		<h3>{{ order.title }}</h3>
+		<p><b> - First name:</b>{{ order.first_name }}</p>
+		<p><b> - Last name:</b>{{ order.last_name }}</p>
+		<p><b> - Phone Number:</b>{{ order.number }}</p>
+		<p><b> - Address:</b>{{ order.address }}</p>
+		<p><b> - Pizza:</b>{{ order.nameofpizza.pizza_name }}</p>
+		<p><b> - Quantity:</b>{{ order.order_quantity }}</p>
+		<p><b> - Delivery Status:</b>{{ order.orderstatus }}</p>
+	
+	
+	<form action="{{ url_for('updateorder', id=order.orderid) }}">
+		<button type="submit">Delivery status</button>
+	</form>
+	<br>
+	<form action="\updateorder\{{ order.orderid }}\delete">
+		<button type="submit">Delete</button>
+	</form>
+	</div>
+
+	
+	
+{% endfor %}
+	
+{% endblock %}
+

@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block body_content %}
+<div class='form'>
+	<form method='POST' action=''>
+	{{ form.hidden_tag() }}
+        {{ form.first_name.label }}
+        {{ form.first_name }}
+	{% if form.first_name.errors %}
+		{% for error in form.first_name.errors %}
+		{{ error }}
+		{% endfor %}
+	{% endif %}
+        <br>
+        {{ form.last_name.label }}
+        {{ form.last_name }}
+	{% if form.first_name.errors %}
+		{% for error in form.last_name.errors %}
+		{{ error }}
+		{% endfor %}
+	{% endif %}
+        <br>
+        {{ form.number.label }}
+        {{ form.number }}
+	{% if form.first_name.errors %}
+		{% for error in form.number.errors %}
+		{{ error }}
+		{% endfor %}
+	{% endif %}
+        <br>
+        {{ form.address.label }}
+        {{ form.address }}
+	{% if form.address.errors %}
+		{% for error in form.number.errors %}
+		{{ error }}
+		{% endfor %}
+        {% endif %}
+        <br>
+        {{ form.pizzaid.label }}
+        {{ form.pizzaid }}
+	{% if form.pizzaid.errors %}
+		{% for error in form.pizzaid.errors %}
+		{{ error }}
+		{% endfor %}
+        {% endif %}
+		<br>
+        {{ form.order_quantity.label }}
+        {{ form.order_quantity }}
+	{% if form.order_quantity.errors %}
+		{% for error in form.order_quantity.errors %}
+		{{ error }}
+		{% endfor %}
+        {% endif %}
+		<br>
+		{{ form.submit }}
+    </form>
+</div>
+
+
+{% endblock %}

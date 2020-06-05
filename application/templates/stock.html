@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block body_content %}
+<div class='form'>
+	<form method='POST' action=''>
+	{{ form.hidden_tag() }}
+        {{ form.pizza_name.label }}
+        {{ form.pizza_name }}
+	{% if form.pizza_name.errors %}
+		{% for error in form.pizza_name.errors %}
+		{{ error }}
+		{% endfor %}
+	{% endif %}
+        <br>
+        {{ form.submit }}
+        </form>
+</div>
+
+
+{% endblock %}

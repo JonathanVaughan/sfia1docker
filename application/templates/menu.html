@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block body_content %}
+<p>Papa Jon's Pizza</p>
+{% for stock in stocks %}
+<div>
+    <p><b> - Pizza Number:</b>{{ stock.pizza_num }} <b> - Pizza Name:</b>{{ stock.pizza_name }}</p>
+</div>
+{% endfor %}
+	
+{% endblock %}
